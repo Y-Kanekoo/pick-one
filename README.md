@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PickOne
 
-## Getting Started
+迷ったらこれ！ルーレット式ランダム選択アプリ
 
-First, run the development server:
+## 概要
+
+ランチ、映画、行き先...日常の「決められない」をルーレットで解決するWebアプリです。
+
+## デモ
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000 でアプリを確認できます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 技術スタック
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **フレームワーク**: Next.js 16 (App Router)
+- **言語**: TypeScript
+- **スタイリング**: Tailwind CSS
+- **データ永続化**: localStorage
 
-## Learn More
+## 機能一覧
 
-To learn more about Next.js, take a look at the following resources:
+| 機能 | 説明 |
+|------|------|
+| ルーレット | アニメーション付きのランダム選択 |
+| プリセット | ランチ、夕食、映画、週末、はい/いいえ、じゃんけん |
+| カスタム選択肢 | 自由に追加・削除可能 |
+| データ保存 | 選択肢と履歴を自動保存 |
+| 履歴機能 | 過去10件の結果を記録 |
+| 広告エリア | 上下に広告表示スペースを配置 |
+| ダークモード | システム設定に連動 |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ディレクトリ構成
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── layout.tsx      # ルートレイアウト
+│   ├── page.tsx        # メインページ
+│   └── globals.css     # グローバルスタイル
+├── components/
+│   └── features/
+│       ├── Roulette.tsx       # ルーレットコンポーネント
+│       ├── OptionList.tsx     # 選択肢リスト
+│       ├── PresetSelector.tsx # プリセット選択
+│       ├── History.tsx        # 履歴表示
+│       ├── ResultModal.tsx    # 結果モーダル
+│       └── AdBanner.tsx       # 広告バナー
+├── hooks/
+│   └── useLocalStorage.ts     # localStorage管理
+├── types/
+│   └── index.ts               # 型定義
+└── constants/
+    └── presets.ts             # プリセットデータ
+```
 
-## Deploy on Vercel
+## セットアップ
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# 依存関係のインストール
+npm install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 開発サーバー起動
+npm run dev
+
+# ビルド
+npm run build
+
+# 本番サーバー起動
+npm start
+```
+
+## 広告収入化
+
+1. Google AdSenseに申請
+2. `src/components/features/AdBanner.tsx` をAdSenseコードに置き換え
+3. Vercel等にデプロイ
+
+## 開発履歴
+
+### v1.0.0 (2025-01-04)
+
+- [x] Next.jsプロジェクトを初期化
+- [x] 基本レイアウトとUIコンポーネントを作成
+- [x] ルーレット/くじ引き機能を実装
+- [x] 選択肢の追加・削除・保存機能を実装
+- [x] プリセット機能を実装（6種類）
+- [x] 履歴機能を実装
+- [x] 広告表示エリアを配置
+- [x] ビルド確認とエラー修正
+- [x] GitHubリポジトリを作成しpush
+
+## ライセンス
+
+MIT
