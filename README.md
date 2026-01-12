@@ -8,6 +8,10 @@
 
 ## デモ
 
+**本番サイト**: https://pick-one-omega.vercel.app
+
+### ローカル開発
+
 ```bash
 npm run dev
 ```
@@ -92,6 +96,7 @@ npm start
 - [x] 広告表示エリアを配置
 - [x] ビルド確認とエラー修正
 - [x] GitHubリポジトリを作成しpush
+- [x] Vercelにデプロイ
 
 ## ライセンス
 
