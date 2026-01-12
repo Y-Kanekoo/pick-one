@@ -8,7 +8,7 @@
 
 ## デモ
 
-**本番サイト**: https://pick-one-omega.vercel.app
+**本番サイト**: https://pick-one.pages.dev
 
 ### ローカル開発
 
@@ -24,6 +24,7 @@ http://localhost:3000 でアプリを確認できます。
 - **言語**: TypeScript
 - **スタイリング**: Tailwind CSS
 - **データ永続化**: localStorage
+- **ホスティング**: Cloudflare Pages
 
 ## 機能一覧
 
@@ -97,6 +98,7 @@ npm start
 - [x] ビルド確認とエラー修正
 - [x] GitHubリポジトリを作成しpush
 - [x] Vercelにデプロイ
+- [x] Cloudflare Pagesに移行（商用利用対応）
 
 ## ライセンス
 
