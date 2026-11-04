@@ -10,18 +10,19 @@ interface ResultModalProps {
 }
 
 export default function ResultModal({ result, isOpen, onClose, onRetry }: ResultModalProps) {
+  if (!isOpen) return null;
+
+  return <VisibleResultModal result={result} onClose={onClose} onRetry={onRetry} />;
+}
+
+function VisibleResultModal({ result, onClose, onRetry }: Omit<ResultModalProps, 'isOpen'>) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
-      // アニメーション用に少し遅延
-      setTimeout(() => setIsVisible(true), 50);
-    } else {
-      setIsVisible(false);
-    }
-  }, [isOpen]);
-
-  if (!isOpen) return null;
+    // アニメーション用に少し遅延
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div
