@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { Option, HistoryEntry, RouletteState } from '@/types';
 import { COLORS, PRESETS } from '@/constants/presets';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
